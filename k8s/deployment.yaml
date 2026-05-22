@@ -1,0 +1,26 @@
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: dso-project2
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: dso-project2
+
+  template:
+    metadata:
+      labels:
+        app: dso-project2
+
+    spec:
+      containers:
+      - name: dso-project2
+        image: vaibhavsri1990/dso-project2:latest
+        ports:
+        - containerPort: 8080
+
